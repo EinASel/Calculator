@@ -13,6 +13,7 @@ int add (int, int);
 int sub (int, int);
 int mult (int, int);
 int divi (int, int);
+int power (int, int);
 
 int main() {
 	int x;
@@ -22,7 +23,7 @@ int main() {
 	cin >> x;
 	cout << "Now enter your second number" << endl;
 	cin >> x2;
-	cout << "Now enter your operation (+, -, *, /)" << endl;
+	cout << "Now enter your operation (+, -, *, /, ^)" << endl;
 	cin >> op;
 
 	if (op == '+'){
@@ -39,6 +40,10 @@ int main() {
 
 	else if (op == '/'){
 		cout << divi (x, x2);
+	}
+
+	else if (op == '^'){
+		cout << power (x, x2);
 	}
 
 	else {
@@ -62,4 +67,12 @@ int mult (int a, int b){
 
 int divi (int a, int b){
 	return a/b;
+}
+
+int power (int a, int b){
+	int z = 1;
+	for (int x = b; x > 0 ; x --){
+		z = z*a;
+	}
+	return z;
 }
